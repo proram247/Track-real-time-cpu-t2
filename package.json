@@ -1,0 +1,30 @@
+{
+  "name": "server-load-test",
+  "version": "1.0.0",
+  "description": "Server load testing application with CPU monitoring and zero-downtime restarts",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "pm2 start src/server.js --name server",
+    "stop": "pm2 stop server",
+    "restart": "pm2 restart server",
+    "reload": "pm2 reload server",
+    "status": "pm2 status",
+    "logs": "pm2 logs server",
+    "load-test": "node loadTest.js"
+  },
+  "keywords": ["load-test", "server", "monitoring", "pm2", "express"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "pm2": "^5.3.0"
+  }
+}
