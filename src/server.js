@@ -62,15 +62,6 @@ app.get('/health', (req, res) => {
 // Routes
 app.use('/api/message', require('./routes/message'));
 
-// 404 handler
-app.get('*', (req, res) => {
-    res.status(404).json({
-        status: 'Not Found',
-        message: 'Route not found',
-        uptime: process.uptime()
-    });
-});
-
 // Error middleware
 app.use(errorHandler);
 
